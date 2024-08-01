@@ -18,7 +18,7 @@ variable "instance_type" {
   default     = "t3.nano"
 }
 
-variable "key_name" {
+variable "key" {
   description = "SSH key name"
   type        = string
 }
