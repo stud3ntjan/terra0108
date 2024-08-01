@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "superbucket"
+    bucket = "superstrongbucket"
     key    = "ec2-example/vpc.tfstate"
     region = var.aws_region
   }
