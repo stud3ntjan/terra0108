@@ -16,7 +16,7 @@ jobs:
           terraform_version: 1.9.3
 
       # Bei AWS Authentifizieren
-      - name: Configure AWS Credentials 2
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: eu-central-1
@@ -34,7 +34,7 @@ jobs:
         run: cat $(find . -type f -name "*.tf" -exec terraform fmt -check=true {} \; 2>&1) || true
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -input=false -no-color
 
       - name: Terraform Validate
         run: terraform validate
